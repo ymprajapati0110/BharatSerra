@@ -1,0 +1,72 @@
+/*
+  📘 INDEX.CSS — Global Styles
+
+  These 3 lines import Tailwind's CSS:
+  - base:       Resets browser defaults (margins, paddings, font sizes)
+  - components: Tailwind's component classes (container, etc.)
+  - utilities:  All the classes you use (bg-blue-500, text-center, p-4, etc.)
+  
+  Without these, none of your Tailwind classes would work!
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  📘 Custom base styles
+  @layer base = these apply to ALL elements by default
+*/
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Makes anchor links (#about) scroll smoothly */
+  }
+
+  body {
+    @apply font-sans text-gray-800 bg-white antialiased;
+    -webkit-tap-highlight-color: transparent;
+    /*
+      font-sans   → Uses our Inter font (defined in tailwind.config.js)
+      text-gray-800 → Default text color (dark gray, not pure black — easier on eyes)
+      bg-white    → White background
+      antialiased → Smoother font rendering
+      -webkit-tap-highlight → Removes blue flash on tap in mobile Safari
+    */
+  }
+
+  /* Prevent double-tap zoom on interactive elements — iOS Safari fix */
+  a,
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+}
+
+/*
+  📘 Custom utility classes
+  @layer utilities = custom classes you can use alongside Tailwind classes
+*/
+@layer utilities {
+
+  /* Gradient text effect — used in headings */
+  .text-gradient {
+    background: linear-gradient(to right, #1e40af, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Section padding — consistent spacing for all sections */
+  .section-padding {
+    @apply py-12 px-4 sm:py-14 md:py-16 lg:py-20;
+  }
+
+  /* Container that centers content with max width */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
