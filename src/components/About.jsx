@@ -89,8 +89,8 @@ export default function About() {
                     >
                         <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20">
                             <img
-                                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
-                                alt="Excavator working at construction site"
+                                src="https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?w=800&q=80"
+                                alt="Construction workers with excavator"
                                 className="w-full h-80 sm:h-96 object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent" />

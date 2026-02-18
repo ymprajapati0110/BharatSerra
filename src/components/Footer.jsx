@@ -2,7 +2,7 @@
   📘 FOOTER COMPONENT — Company logo, compact layout
 */
 
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaArrowUp, FaHeart } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaArrowUp } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export default function Footer() {
@@ -149,7 +149,7 @@ export default function Footer() {
             <div className="border-t border-gray-800/50 relative z-10">
                 <div className="container-custom py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
                     <p className="text-gray-500 text-sm text-center sm:text-left flex items-center gap-1">
-                        © {new Date().getFullYear()} BharatSerra Corp. Made with <FaHeart className="text-red-400 text-xs" /> in Sierra Leone
+                        © {new Date().getFullYear()} BharatSerra Corp. Proudly serving Sierra Leone.
                     </p>
                     <button
                         onClick={scrollToTop}

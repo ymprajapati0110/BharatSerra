@@ -14,7 +14,7 @@ export default function Hero() {
                 <img
                     src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1600&q=80"
                     alt="Heavy construction machinery at sunset"
-                    className="w-full h-full object-cover scale-105 animate-pulse-slow"
+                    className="w-full h-full object-cover object-center scale-105 animate-pulse-slow"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-900/80 to-purple-900/60" />
             </div>
@@ -102,15 +102,15 @@ export default function Hero() {
                         </div>
                     </motion.div>
 
-                    {/* Right Content - 3D Floating Cards */}
-                    <div className="hidden lg:block relative h-[600px]">
-                        {/* Service Cards Floating */}
+                    {/* Right Content - 3D Floating Cards (Stacked on Tablet/Mobile, Floating on Desktop) */}
+                    <div className="relative lg:h-[600px] flex flex-col gap-6 mt-8 lg:mt-0">
+                        {/* Service Cards */}
                         <FloatingCard
                             icon={FaTruckMoving}
                             title="Haulage Services"
                             desc="32T & 42T Trucks"
                             color="bg-blue-600"
-                            position="top-10 right-5"
+                            position="top-0 lg:top-10 lg:right-10"
                             delay={0.2}
                         />
                         <FloatingCard
@@ -118,7 +118,7 @@ export default function Hero() {
                             title="Oil Supply"
                             desc="Reliable Fuel Delivery"
                             color="bg-black"
-                            position="top-40 left-0"
+                            position="left-0 lg:top-1/2 lg:-translate-y-1/2 lg:left-0"
                             delay={0.4}
                         />
                         <FloatingCard
@@ -126,13 +126,13 @@ export default function Hero() {
                             title="Custom Import"
                             desc="Delivery in 2 Months"
                             color="bg-amber-600"
-                            position="bottom-10 right-10"
+                            position="bottom-0 lg:bottom-10 lg:right-20"
                             delay={0.6}
                         />
 
-                        {/* Circle Background */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-white/10 rounded-full animate-spin-slow-reverse" />
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border border-white/10 rounded-full animate-spin-slow" />
+                        {/* Circle Background - Desktop Only */}
+                        <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-white/10 rounded-full animate-spin-slow-reverse" />
+                        <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border border-white/10 rounded-full animate-spin-slow" />
                     </div>
                 </div>
             </div>
@@ -147,7 +147,7 @@ function FloatingCard({ icon: Icon, title, desc, color, position, delay }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay, duration: 0.8, type: "spring" }}
             whileHover={{ scale: 1.1, rotate: 2 }}
-            className={`absolute ${position} bg-white/10 backdrop-blur-xl border border-white/20 p-5 rounded-2xl w-64 shadow-2xl cursor-default`}
+            className={`relative lg:absolute ${position} bg-white/10 backdrop-blur-xl border border-white/20 p-5 rounded-2xl w-full sm:w-64 shadow-2xl cursor-default mx-auto lg:mx-0`}
         >
             <div className={`w-12 h-12 ${color} rounded-lg flex items-center justify-center text-white text-xl mb-3 shadow-lg`}>
                 <Icon />
