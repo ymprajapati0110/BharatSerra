@@ -43,10 +43,10 @@ const FEATURES = [
 
 export default function About() {
     return (
-        <section id="about" className="section-padding bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden">
+        <section id="about" className="section-padding bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative overflow-hidden">
             {/* Background decorative elements */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-100/50 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-b from-emerald-200/30 to-teal-200/30 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-t from-cyan-200/30 to-blue-200/30 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
 
             <div className="container-custom relative">
                 {/* Section Header */}

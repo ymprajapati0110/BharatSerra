@@ -21,13 +21,13 @@ const SERVICE_THEMES = {
 
 export default function Services() {
     return (
-        <section id="services" className="section-padding relative overflow-hidden bg-gray-900">
+        <section id="services" className="section-padding relative overflow-hidden bg-gradient-to-br from-gray-900 via-indigo-950 to-purple-950">
             {/* Dynamic Background */}
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
             <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-                className="absolute -top-1/2 -left-1/2 w-[100vw] h-[100vw] bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl opacity-30"
+                className="absolute -top-1/2 -left-1/2 w-[100vw] h-[100vw] bg-gradient-to-r from-blue-500/20 to-pink-500/20 rounded-full blur-3xl opacity-40"
             />
 
             <div className="container-custom relative z-10">
@@ -67,7 +67,7 @@ export default function Services() {
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
                                 whileHover={{ y: -8, scale: 1.02 }}
-                                className="group relative bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-300"
+                                className="group relative bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 overflow-hidden hover:border-amber-400/50 transition-all duration-300"
                             >
                                 {/* Hover Gradient Background */}
                                 <div className={`absolute inset-0 bg-gradient-to-br ${theme} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />

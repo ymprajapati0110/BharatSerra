@@ -63,7 +63,7 @@ export default function Navbar() {
     return (
         <>
             {/* TOP INFO BAR */}
-            <div className="hidden md:block bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white text-sm">
+            <div className="hidden md:block bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 text-white text-sm">
                 <div className="container-custom flex justify-between items-center py-2">
                     <div className="flex items-center gap-6">
                         <a href="tel:+23290800632" className="flex items-center gap-2 hover:text-amber-300 transition-colors">
@@ -101,7 +101,7 @@ export default function Navbar() {
                             transition={{ duration: 0.5 }}
                         />
                         <div>
-                            <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-800 to-indigo-700 
+                            <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-700 to-rose-700 
                              bg-clip-text text-transparent leading-tight">
                                 BharatSerra
                             </h1>

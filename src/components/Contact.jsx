@@ -98,9 +98,10 @@ export default function Contact() {
         "w-full px-4 py-3.5 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 transition-all duration-200";
 
     return (
-        <section id="contact" className="section-padding bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        <section id="contact" className="section-padding bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 relative overflow-hidden">
             {/* Background decorations */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-50 rounded-full -translate-y-1/2 blur-3xl opacity-50" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-rose-200/20 to-orange-200/20 rounded-full -translate-y-1/2 blur-3xl opacity-60" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-200/20 rounded-full blur-3xl opacity-50" />
 
             <div className="container-custom relative">
                 {/* Section Header */}

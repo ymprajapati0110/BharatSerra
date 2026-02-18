@@ -16,7 +16,7 @@ export default function Hero() {
                     alt="Heavy construction machinery at sunset"
                     className="w-full h-full object-cover object-center scale-105 animate-pulse-slow"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-900/80 to-purple-900/60" />
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-indigo-900/80 to-rose-900/60" />
             </div>
 
             {/* Floating Elements */}

@@ -13,7 +13,7 @@ export default function Footer() {
     return (
         <footer className="relative overflow-hidden">
             {/* Gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-900 to-black" />
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-purple-950" />
             <motion.div
                 animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
                 transition={{ duration: 8, repeat: Infinity }}

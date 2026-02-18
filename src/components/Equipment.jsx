@@ -47,10 +47,10 @@ export default function Equipment() {
             : equipment.filter((item) => item.category === activeFilter);
 
     return (
-        <section id="equipment" className="section-padding bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        <section id="equipment" className="section-padding bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute top-1/4 right-0 w-80 h-80 bg-blue-100/40 rounded-full blur-3xl" />
-            <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-amber-100/40 rounded-full blur-3xl" />
+            <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl mix-blend-multiply animate-pulse-slow" />
+            <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-purple-400/20 rounded-full blur-3xl mix-blend-multiply animate-pulse-slow" />
 
             <div className="container-custom relative">
                 {/* Section Header */}
@@ -94,7 +94,7 @@ export default function Equipment() {
                             className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300
                 ${activeFilter === cat
                                     ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/30 scale-105"
-                                    : "bg-white text-gray-600 hover:bg-blue-50 hover:text-blue-700 border border-gray-200 hover:border-blue-300"
+                                    : "bg-white text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-blue-700 border border-gray-200 hover:border-blue-300"
                                 }`}
                         >
                             {cat}
