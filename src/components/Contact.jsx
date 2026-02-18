@@ -95,7 +95,7 @@ export default function Contact() {
     };
 
     const inputClasses =
-        "w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 transition-all duration-200";
+        "w-full px-4 py-3.5 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 transition-all duration-200";
 
     return (
         <section id="contact" className="section-padding bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">

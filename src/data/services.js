@@ -18,7 +18,10 @@ import {
     FaHardHat,
     FaRoute,
     FaBuilding,
-    FaCog,
+    FaRoad,
+    FaOilCan,
+    FaCogs,
+    FaShippingFast,
 } from "react-icons/fa";
 
 const services = [
@@ -36,9 +39,9 @@ const services = [
     },
     {
         icon: FaTruckMoving,
-        title: "Earthmoving",
+        title: "Earthmoving & Haulage",
         description:
-            "Efficient earthmoving operations for grading, leveling, and reshaping terrain for roads, buildings, and infrastructure.",
+            "Efficient earthmoving and heavy-duty haulage of materials, aggregates, and earth with our 32T and 42T capacity trucks.",
     },
     {
         icon: FaHardHat,
@@ -47,10 +50,10 @@ const services = [
             "Reliable equipment and operational support for mining companies including material extraction and transportation.",
     },
     {
-        icon: FaRoute,
-        title: "Haulage Services",
+        icon: FaRoad,
+        title: "Road Construction",
         description:
-            "Heavy-duty haulage and transportation of materials, aggregates, and earth with our 32T and 42T capacity trucks.",
+            "End-to-end road construction services — we build roads as per your specifications and requirements, from planning to completion.",
     },
     {
         icon: FaBuilding,
@@ -59,10 +62,22 @@ const services = [
             "End-to-end land development services from initial clearing to final grading, ready for construction.",
     },
     {
-        icon: FaCog,
-        title: "Construction Support",
+        icon: FaOilCan,
+        title: "Oil Supply",
         description:
-            "On-site equipment support for construction companies including operators, maintenance, and logistics.",
+            "Reliable fuel and oil supply services to keep your equipment and operations running without interruption.",
+    },
+    {
+        icon: FaCogs,
+        title: "Custom Machinery",
+        description:
+            "We customise or import machinery as per your specific project requirements — delivered within 2 months.",
+    },
+    {
+        icon: FaShippingFast,
+        title: "Equipment Import",
+        description:
+            "Need specialised equipment? We import heavy machinery from across the globe within 2 months of your order.",
     },
 ];
 

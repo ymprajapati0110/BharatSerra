@@ -1,8 +1,6 @@
 /*
-  📘 NAVBAR COMPONENT — The Navigation Bar (UPGRADED)
-  
-  Fixed: top bar spacing, mobile email overflow
-  Added: gradient top bar, animated logo, better mobile menu
+  📘 NAVBAR COMPONENT — Navigation Bar
+  Uses company logo.jpeg, scrollspy, mobile hamburger menu
 */
 
 import { useState, useEffect } from "react";
@@ -23,51 +21,35 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
 
-    // 📘 SCROLL EFFECT — detect when user scrolls for sticky shadow
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
+        const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // 📘 SCROLLSPY — uses IntersectionObserver to track which section is visible
-    // IntersectionObserver watches elements and tells us when they enter/leave the viewport.
-    // rootMargin: "-20% 0px -60% 0px" means the "visible zone" is the middle 20% of screen.
+    // Scrollspy
     useEffect(() => {
         const sectionIds = NAV_LINKS.map((link) => link.href.replace("#", ""));
         const observers = [];
-
         sectionIds.forEach((id) => {
             const element = document.getElementById(id);
             if (!element) return;
-
             const observer = new IntersectionObserver(
                 ([entry]) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(id);
-                    }
+                    if (entry.isIntersecting) setActiveSection(id);
                 },
                 { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
             );
-
             observer.observe(element);
             observers.push(observer);
         });
-
         return () => observers.forEach((obs) => obs.disconnect());
     }, []);
 
     const handleNavClick = (e, href) => {
         e.preventDefault();
         const targetId = href.replace("#", "");
-
-        // Close mobile menu first
         setMobileMenuOpen(false);
-
-        // Wait for menu close animation (300ms) to finish so the page height
-        // settles before we calculate the scroll position
         setTimeout(() => {
             const element = document.getElementById(targetId);
             if (element) {
@@ -80,31 +62,21 @@ export default function Navbar() {
 
     return (
         <>
-            {/* TOP INFO BAR — gradient background, proper spacing, hidden on mobile */}
+            {/* TOP INFO BAR */}
             <div className="hidden md:block bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white text-sm">
-                <div className="container-custom flex justify-between items-center py-2.5">
-                    <div className="flex items-center gap-8">
-                        <a
-                            href="tel:+23290800632"
-                            className="flex items-center gap-2 hover:text-amber-300 transition-colors"
-                        >
+                <div className="container-custom flex justify-between items-center py-2">
+                    <div className="flex items-center gap-6">
+                        <a href="tel:+23290800632" className="flex items-center gap-2 hover:text-amber-300 transition-colors">
                             <FaPhone className="text-xs text-amber-400" />
                             <span>+232 90 800632</span>
                         </a>
-                        {/* Divider dot */}
                         <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
-                        <a
-                            href="tel:+919979977744"
-                            className="flex items-center gap-2 hover:text-amber-300 transition-colors"
-                        >
+                        <a href="tel:+919979977744" className="flex items-center gap-2 hover:text-amber-300 transition-colors">
                             <FaPhone className="text-xs text-amber-400" />
                             <span>+91 99799 77744</span>
                         </a>
                     </div>
-                    <a
-                        href="mailto:Bharatserracorp@gmail.com"
-                        className="flex items-center gap-2 hover:text-amber-300 transition-colors truncate"
-                    >
+                    <a href="mailto:Bharatserracorp@gmail.com" className="flex items-center gap-2 hover:text-amber-300 transition-colors truncate">
                         <FaEnvelope className="text-xs text-amber-400 flex-shrink-0" />
                         <span className="truncate">Bharatserracorp@gmail.com</span>
                     </a>
@@ -112,27 +84,24 @@ export default function Navbar() {
             </div>
 
             {/* MAIN NAVBAR */}
-            <nav
-                className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300 ${scrolled
-                    ? "shadow-lg shadow-blue-900/10 py-2"
-                    : "shadow-sm py-3"
-                    }`}
-            >
+            <nav className={`sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300 ${scrolled ? "shadow-lg shadow-blue-900/10 py-1" : "shadow-sm py-2"}`}>
                 <div className="container-custom flex items-center justify-between">
-                    {/* LOGO */}
+                    {/* LOGO — uses company logo.jpeg */}
                     <a
                         href="#home"
                         onClick={(e) => handleNavClick(e, "#home")}
-                        className="flex items-center gap-3 group"
+                        className="flex items-center gap-2.5 group"
                     >
-                        <div className="w-11 h-11 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl 
-                            flex items-center justify-center shadow-md shadow-blue-600/30
-                            group-hover:shadow-lg group-hover:shadow-blue-600/40 
-                            group-hover:scale-105 transition-all duration-300">
-                            <span className="text-white font-extrabold text-lg">BS</span>
-                        </div>
+                        <motion.img
+                            src="/logo.jpeg"
+                            alt="BharatSerra Corp Logo"
+                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover shadow-md
+                                       group-hover:shadow-lg group-hover:scale-105 transition-all duration-300"
+                            whileHover={{ rotate: [0, -5, 5, 0] }}
+                            transition={{ duration: 0.5 }}
+                        />
                         <div>
-                            <h1 className="text-xl font-bold bg-gradient-to-r from-blue-800 to-indigo-700 
+                            <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-800 to-indigo-700 
                              bg-clip-text text-transparent leading-tight">
                                 BharatSerra
                             </h1>
@@ -159,7 +128,6 @@ export default function Navbar() {
                                         }`}
                                 >
                                     {link.label}
-                                    {/* Animated underline — stays visible when active */}
                                     <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 
                                         bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full
                                         transition-all duration-300
@@ -196,7 +164,7 @@ export default function Navbar() {
                     </button>
                 </div>
 
-                {/* MOBILE MENU — animated slide-down */}
+                {/* MOBILE MENU */}
                 <AnimatePresence>
                     {mobileMenuOpen && (
                         <motion.div
@@ -206,7 +174,7 @@ export default function Navbar() {
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                             className="md:hidden overflow-hidden border-t border-blue-100"
                         >
-                            <div className="container-custom py-4 space-y-1">
+                            <div className="container-custom py-3 space-y-1">
                                 {NAV_LINKS.map((link, i) => {
                                     const isActive = activeSection === link.href.replace("#", "");
                                     return (
@@ -217,7 +185,7 @@ export default function Navbar() {
                                             initial={{ x: -20, opacity: 0 }}
                                             animate={{ x: 0, opacity: 1 }}
                                             transition={{ delay: i * 0.05 }}
-                                            className={`block px-4 py-3 rounded-xl font-medium transition-colors
+                                            className={`block px-4 py-2.5 rounded-xl font-medium transition-colors
                                                 ${isActive
                                                     ? "bg-blue-50 text-blue-700 border-l-4 border-blue-600"
                                                     : "text-gray-700 hover:bg-blue-50 hover:text-blue-700"
@@ -228,8 +196,8 @@ export default function Navbar() {
                                     );
                                 })}
 
-                                {/* Mobile contact info — truncated email */}
-                                <div className="pt-4 mt-3 border-t border-blue-100 space-y-2">
+                                {/* Mobile contact info */}
+                                <div className="pt-3 mt-2 border-t border-blue-100 space-y-1.5">
                                     <a href="tel:+23290800632" className="flex items-center gap-3 px-4 py-2 text-gray-600 text-sm">
                                         <FaPhone className="text-blue-500 flex-shrink-0" />
                                         <span>+232 90 800632</span>

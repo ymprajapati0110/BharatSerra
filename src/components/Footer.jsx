@@ -1,6 +1,5 @@
 /*
-  📘 FOOTER COMPONENT — UPGRADED
-  Gradient dark footer, vibrant accents, animated hover effects
+  📘 FOOTER COMPONENT — Company logo, compact layout
 */
 
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaArrowUp, FaHeart } from "react-icons/fa";
@@ -15,35 +14,38 @@ export default function Footer() {
         <footer className="relative overflow-hidden">
             {/* Gradient background */}
             <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-900 to-black" />
-
-            {/* Decorative gradient orb */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2" />
+            <motion.div
+                animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 8, repeat: Infinity }}
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2"
+            />
 
             {/* Main Footer */}
-            <div className="container-custom py-16 relative z-10">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-                    {/* Column 1: Company */}
+            <div className="container-custom py-10 relative z-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+                    {/* Column 1: Company with Logo */}
                     <div className="sm:col-span-2 lg:col-span-1">
-                        <div className="flex items-center gap-3 mb-5">
-                            <div className="w-11 h-11 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl 
-                              flex items-center justify-center shadow-lg shadow-blue-500/20">
-                                <span className="text-white font-extrabold text-lg">BS</span>
-                            </div>
+                        <div className="flex items-center gap-3 mb-4">
+                            <img
+                                src="/logo.jpeg"
+                                alt="BharatSerra Corp"
+                                className="w-11 h-11 rounded-full object-cover shadow-lg shadow-blue-500/20"
+                            />
                             <div>
                                 <h3 className="text-white font-bold text-lg leading-tight">BharatSerra</h3>
                                 <p className="text-[10px] text-blue-400 uppercase tracking-[0.2em] font-semibold">Corp</p>
                             </div>
                         </div>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-5">
-                            A Heavy Equipment Rental, Excavation & Haulage Contracting Company
-                            operating in Sierra Leone.
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                            Heavy Equipment Rental, Excavation, Haulage, Oil Supply &amp;
+                            Road Construction in Sierra Leone.
                         </p>
                         <a
                             href="https://wa.me/919979977744"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 
-                         text-green-400 px-5 py-2.5 rounded-xl text-sm font-semibold
+                         text-green-400 px-4 py-2 rounded-xl text-sm font-semibold
                          hover:from-green-500/30 hover:to-emerald-500/30 transition-all
                          border border-green-500/20"
                         >
@@ -54,11 +56,11 @@ export default function Footer() {
 
                     {/* Column 2: Quick Links */}
                     <div>
-                        <h4 className="text-white font-bold text-lg mb-5 flex items-center gap-2">
-                            <span className="w-6 h-0.5 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full" />
+                        <h4 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                            <span className="w-5 h-0.5 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full" />
                             Quick Links
                         </h4>
-                        <ul className="space-y-3">
+                        <ul className="space-y-2">
                             {[
                                 { label: "Home", href: "#home" },
                                 { label: "About Us", href: "#about" },
@@ -67,11 +69,7 @@ export default function Footer() {
                                 { label: "Contact", href: "#contact" },
                             ].map((link) => (
                                 <li key={link.label}>
-                                    <a
-                                        href={link.href}
-                                        className="text-gray-400 hover:text-amber-400 transition-colors text-sm 
-                               flex items-center gap-2 group"
-                                    >
+                                    <a href={link.href} className="text-gray-400 hover:text-amber-400 transition-colors text-sm flex items-center gap-2 group">
                                         <span className="w-0 group-hover:w-2 h-0.5 bg-amber-400 rounded-full transition-all duration-300" />
                                         {link.label}
                                     </a>
@@ -82,25 +80,21 @@ export default function Footer() {
 
                     {/* Column 3: Services */}
                     <div>
-                        <h4 className="text-white font-bold text-lg mb-5 flex items-center gap-2">
-                            <span className="w-6 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full" />
+                        <h4 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                            <span className="w-5 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full" />
                             Our Services
                         </h4>
-                        <ul className="space-y-3">
+                        <ul className="space-y-2">
                             {[
                                 "Site Clearing",
                                 "Bulk Excavation",
-                                "Earthmoving",
-                                "Mining Support",
-                                "Haulage Services",
-                                "Land Development",
+                                "Earthmoving & Haulage",
+                                "Road Construction",
+                                "Oil Supply",
+                                "Custom Machinery Import",
                             ].map((service) => (
                                 <li key={service}>
-                                    <a
-                                        href="#services"
-                                        className="text-gray-400 hover:text-blue-400 transition-colors text-sm 
-                               flex items-center gap-2 group"
-                                    >
+                                    <a href="#services" className="text-gray-400 hover:text-blue-400 transition-colors text-sm flex items-center gap-2 group">
                                         <span className="w-0 group-hover:w-2 h-0.5 bg-blue-400 rounded-full transition-all duration-300" />
                                         {service}
                                     </a>
@@ -111,11 +105,11 @@ export default function Footer() {
 
                     {/* Column 4: Contact */}
                     <div>
-                        <h4 className="text-white font-bold text-lg mb-5 flex items-center gap-2">
-                            <span className="w-6 h-0.5 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full" />
+                        <h4 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                            <span className="w-5 h-0.5 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full" />
                             Contact Us
                         </h4>
-                        <ul className="space-y-4">
+                        <ul className="space-y-3">
                             <li>
                                 <a href="tel:+23290800632" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors text-sm group">
                                     <span className="w-8 h-8 bg-blue-500/10 group-hover:bg-blue-500/20 rounded-lg flex items-center justify-center transition-colors">
@@ -153,7 +147,7 @@ export default function Footer() {
 
             {/* Copyright */}
             <div className="border-t border-gray-800/50 relative z-10">
-                <div className="container-custom py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="container-custom py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
                     <p className="text-gray-500 text-sm text-center sm:text-left flex items-center gap-1">
                         © {new Date().getFullYear()} BharatSerra Corp. Made with <FaHeart className="text-red-400 text-xs" /> in Sierra Leone
                     </p>
