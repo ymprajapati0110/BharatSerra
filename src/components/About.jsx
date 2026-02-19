@@ -112,13 +112,13 @@ export default function About() {
                     {/* Right: Text + Bullets */}
                     {/* Right: Text + Bullets */}
                     <div>
-                        <h3 className="text-2xl sm:text-3xl font-bold mb-4 force-text-black">
+                        <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900">
                             Building Sierra Leone's{" "}
                             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                                 Infrastructure
                             </span>
                         </h3>
-                        <p className="leading-relaxed mb-6 font-medium force-text-black">
+                        <p className="leading-relaxed mb-6 font-medium text-gray-700">
                             We specialize in providing heavy machinery for mining, road
                             construction, and building projects. Our fleet includes trucks
                             and excavators operated by experienced professionals.
