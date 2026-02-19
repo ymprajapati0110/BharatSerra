@@ -110,19 +110,15 @@ export default function About() {
                     </motion.div>
 
                     {/* Right: Text + Bullets */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 40 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.7 }}
-                    >
-                        <h3 className="text-2xl sm:text-3xl font-bold text-black mb-4" style={{ color: 'black' }}>
+                    {/* Right: Text + Bullets */}
+                    <div>
+                        <h3 className="text-2xl sm:text-3xl font-bold mb-4 force-text-black">
                             Building Sierra Leone's{" "}
                             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                                 Infrastructure
                             </span>
                         </h3>
-                        <p className="text-black leading-relaxed mb-6 font-medium" style={{ color: 'black' }}>
+                        <p className="leading-relaxed mb-6 font-medium force-text-black">
                             We specialize in providing heavy machinery for mining, road
                             construction, and building projects. Our fleet includes trucks
                             and excavators operated by experienced professionals.
@@ -135,20 +131,16 @@ export default function About() {
                                 "Competitive pricing plans",
                                 "24/7 customer support",
                             ].map((item, i) => (
-                                <motion.li
+                                <li
                                     key={i}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 }}
                                     className="flex items-center gap-3"
                                 >
                                     <FaCheckCircle className="text-emerald-500 flex-shrink-0" />
                                     <span className="text-gray-700 font-medium">{item}</span>
-                                </motion.li>
+                                </li>
                             ))}
                         </ul>
-                    </motion.div>
+                    </div>
                 </div>
 
                 {/* Feature Cards — now with individual colors */}

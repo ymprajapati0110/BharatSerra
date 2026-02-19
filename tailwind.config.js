@@ -17,6 +17,7 @@ export default {
   // 📘 content: tells Tailwind WHERE to look for class names
   //    It scans these files and generates CSS only for classes you use
   content: ["./index.html", "./src/**/*.{js,jsx}"],
+  darkMode: "class",
 
   theme: {
     extend: {
