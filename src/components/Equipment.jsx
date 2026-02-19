@@ -16,8 +16,22 @@ const DEFAULT_IMAGES = {
     default: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
 };
 
+// Helper to separate Google Drive links from direct URLs
 function getImage(item) {
-    if (item.image) return item.image;
+    if (item.image) {
+        // Handle Google Drive links (convert 'view' to 'thumbnail' or direct link)
+        if (item.image.includes("drive.google.com") || item.image.includes("docs.google.com")) {
+            // Extract ID
+            const idMatch = item.image.match(/[-\w]{25,}/);
+            if (idMatch) {
+                // Use a high-quality thumbnail endpoint (lh3) or direct download
+                return `https://drive.google.com/thumbnail?id=${idMatch[0]}&sz=w1000`;
+            }
+        }
+        return item.image;
+    }
+
+    // Fallback based on category
     const cat = (item.category || "").toLowerCase();
     if (cat.includes("truck") || cat.includes("tipper")) return DEFAULT_IMAGES.truck;
     if (cat.includes("excavator")) return DEFAULT_IMAGES.excavator;
