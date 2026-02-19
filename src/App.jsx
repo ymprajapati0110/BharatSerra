@@ -39,9 +39,10 @@ import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import { AnimatePresence } from "framer-motion";
 
-// Custom Hook for centered scrolling
-import { useEffect } from "react";
+import Preloader from "./components/Preloader";
+import { useState, useEffect } from "react";
 
 function useScrollToCenter() {
   useEffect(() => {
@@ -63,6 +64,16 @@ function useScrollToCenter() {
 }
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate initial loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
   useScrollToCenter(); // Enable centered scrolling
 
   return (
@@ -72,6 +83,11 @@ function App() {
       "bg-white" sets the base background
     */
     <div className="min-h-screen bg-white">
+      {/* Preloader Overlay */}
+      <AnimatePresence mode="wait">
+        {loading && <Preloader />}
+      </AnimatePresence>
+
       {/* 📘 Navbar stays at the top, "sticky" keeps it visible while scrolling */}
       <Navbar />
 

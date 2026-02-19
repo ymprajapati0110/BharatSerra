@@ -2,7 +2,7 @@
   📘 FOOTER COMPONENT — Company logo, compact layout
 */
 
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaArrowUp } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaArrowUp, FaTruck, FaTruckMoving } from "react-icons/fa";
 import { motion } from "framer-motion";
 import services from "../data/services";
 
@@ -15,11 +15,37 @@ export default function Footer() {
         <footer className="relative overflow-hidden">
             {/* Gradient background */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-purple-950" />
-            <motion.div
-                animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-                transition={{ duration: 8, repeat: Infinity }}
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2"
-            />
+            {/* Infinite Convoy Parallax Background */}
+            <div className="absolute bottom-0 left-0 w-full h-32 overflow-hidden pointer-events-none z-0 opacity-20">
+                {/* Back Layer (Slower, Smaller) */}
+                <motion.div
+                    animate={{ x: ["0%", "-50%"] }}
+                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                    className="absolute bottom-2 left-0 flex items-end gap-24 text-gray-500/30 w-[200%]"
+                >
+                    {[...Array(10)].map((_, i) => (
+                        <div key={i} className="flex gap-2 transform scale-75">
+                            <FaTruckMoving className="text-4xl" />
+                            <FaTruck className="text-3xl" />
+                        </div>
+                    ))}
+                </motion.div>
+
+                {/* Front Layer (Faster, Larger) */}
+                <motion.div
+                    animate={{ x: ["0%", "-50%"] }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className="absolute bottom-0 left-0 flex items-end gap-32 text-gray-400/50 w-[200%]"
+                >
+                    {[...Array(10)].map((_, i) => (
+                        <div key={i} className="flex gap-4">
+                            <FaTruckMoving className="text-6xl" />
+                            <FaTruck className="text-5xl" />
+                            <div className="w-8" /> {/* Spacing */}
+                        </div>
+                    ))}
+                </motion.div>
+            </div>
 
             {/* Main Footer */}
             <div className="container-custom py-10 relative z-10">
