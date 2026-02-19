@@ -27,8 +27,12 @@ function getImage(item) {
                 // Return high-res thumbnail link
                 return `https://drive.google.com/thumbnail?id=${idMatch[1]}&sz=w1000`;
             }
+            // If it's a Drive link but we can't find an ID, fail gracefully to default rather than showing broken link
+            console.warn("Could not extract Drive ID from:", item.image);
+            // Fallthrough to category default below
+        } else {
+            return item.image;
         }
-        return item.image;
     }
 
     // Fallback based on category
@@ -149,13 +153,21 @@ export default function Equipment() {
                                      ${isExpanded ? 'ring-2 ring-blue-500 shadow-2xl z-20' : 'hover:-translate-y-2'}`}
                                 >
                                     {/* --- TOP BLOCK: Image & Badge --- */}
-                                    <motion.div layout="position" className="relative h-56 overflow-hidden bg-gray-100">
+                                    <motion.div layout="position" className="relative h-56 overflow-hidden bg-gray-100 flex items-center justify-center">
                                         <img
                                             src={getImage(item)}
                                             alt={item.name}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            onError={(e) => {
+                                                e.target.onerror = null;
+                                                // Fallback logic
+                                                const cat = (item.category || "").toLowerCase();
+                                                if (cat.includes("truck") || cat.includes("tipper")) e.target.src = DEFAULT_IMAGES.truck;
+                                                else if (cat.includes("excavator")) e.target.src = DEFAULT_IMAGES.excavator;
+                                                else e.target.src = DEFAULT_IMAGES.default;
+                                            }}
+                                            className="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-105"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 to-transparent pointer-events-none" />
 
                                         <span className="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">
                                             {item.category}
