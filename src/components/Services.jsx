@@ -64,10 +64,18 @@ export default function Services() {
                                 key={service.title}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false, amount: 0.5 }}
                                 transition={{ delay: index * 0.1 }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                    scale: 1.05,
+                                    borderColor: "rgba(255, 255, 255, 0.5)",
+                                    boxShadow: "0 0 25px rgba(59, 130, 246, 0.4)"
+                                }}
                                 whileHover={{ y: -8, scale: 1.02 }}
-                                className="group relative bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 overflow-hidden hover:border-amber-400/50 transition-all duration-300"
+                                className="group relative bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 overflow-hidden hover:border-amber-400/50 transition-all duration-300 hover:shadow-glow"
+                                id={service.title.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}
                             >
                                 {/* Hover Gradient Background */}
                                 <div className={`absolute inset-0 bg-gradient-to-br ${theme} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />

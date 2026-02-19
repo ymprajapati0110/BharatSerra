@@ -14,6 +14,7 @@ import {
     FaPaperPlane,
     FaCheckCircle,
 } from "react-icons/fa";
+import services from "../data/services";
 
 const CONTACT_INFO = [
     {
@@ -164,7 +165,7 @@ export default function Contact() {
                                         <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-0.5">
                                             {info.label}
                                         </p>
-                                        <p className="font-semibold text-gray-800 text-sm break-all sm:break-normal">
+                                        <p className="font-semibold text-gray-800 text-sm break-all">
                                             {info.value}
                                         </p>
                                     </Card>
@@ -184,7 +185,7 @@ export default function Contact() {
                         <form
                             onSubmit={handleSubmit}
                             className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl shadow-blue-900/5 
-                         border border-gray-100"
+                         border border-gray-100 hover:shadow-glow transition-shadow duration-300"
                         >
                             <h3 className="text-xl font-extrabold text-gray-900 mb-6 flex items-center gap-2">
                                 <span className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg 
@@ -249,11 +250,12 @@ export default function Contact() {
                                         onChange={handleChange}
                                         className={inputClasses}
                                     >
-                                        <option value="">Select equipment...</option>
-                                        <option value="32 Ton Tipper Truck">32 Ton Tipper Truck</option>
-                                        <option value="42 Ton Tipper Truck">42 Ton Tipper Truck</option>
-                                        <option value="Crawler Excavator">Crawler Excavator</option>
-                                        <option value="Multiple Equipment">Multiple Equipment</option>
+                                        <option value="">Select equipment or service...</option>
+                                        {services.map((s) => (
+                                            <option key={s.title} value={s.title}>
+                                                {s.title}
+                                            </option>
+                                        ))}
                                         <option value="Other">Other</option>
                                     </select>
                                 </div>

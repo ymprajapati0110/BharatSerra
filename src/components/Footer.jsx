@@ -4,6 +4,7 @@
 
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaArrowUp } from "react-icons/fa";
 import { motion } from "framer-motion";
+import services from "../data/services";
 
 export default function Footer() {
     const scrollToTop = () => {
@@ -85,18 +86,11 @@ export default function Footer() {
                             Our Services
                         </h4>
                         <ul className="space-y-2">
-                            {[
-                                "Site Clearing",
-                                "Bulk Excavation",
-                                "Earthmoving & Haulage",
-                                "Road Construction",
-                                "Oil Supply",
-                                "Custom Machinery Import",
-                            ].map((service) => (
-                                <li key={service}>
-                                    <a href="#services" className="text-gray-400 hover:text-blue-400 transition-colors text-sm flex items-center gap-2 group">
+                            {services.map((service) => (
+                                <li key={service.title}>
+                                    <a href={`#${service.title.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} className="text-gray-400 hover:text-blue-400 transition-colors text-sm flex items-center gap-2 group">
                                         <span className="w-0 group-hover:w-2 h-0.5 bg-blue-400 rounded-full transition-all duration-300" />
-                                        {service}
+                                        {service.title}
                                     </a>
                                 </li>
                             ))}

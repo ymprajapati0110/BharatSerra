@@ -40,7 +40,31 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 
+// Custom Hook for centered scrolling
+import { useEffect } from "react";
+
+function useScrollToCenter() {
+  useEffect(() => {
+    const handleAnchorClick = (e) => {
+      const target = e.target.closest('a');
+      if (target && target.hash && target.origin === window.location.origin) {
+        e.preventDefault();
+        const element = document.querySelector(target.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // Update URL without jumping
+          window.history.pushState(null, '', target.hash);
+        }
+      }
+    };
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
+}
+
 function App() {
+  useScrollToCenter(); // Enable centered scrolling
+
   return (
     /*
       📘 The wrapper div

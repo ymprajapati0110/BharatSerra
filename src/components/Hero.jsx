@@ -4,11 +4,11 @@
 */
 
 import { motion } from "framer-motion";
-import { FaWhatsapp, FaPhone, FaTruckMoving, FaOilCan, FaCogs, FaArrowRight } from "react-icons/fa";
+import { FaWhatsapp, FaArrowRight } from "react-icons/fa";
 
 export default function Hero() {
     return (
-        <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+        <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 lg:pt-24 pb-20 overflow-hidden text-center">
             {/* Background Image with Dynamic Overlay */}
             <div className="absolute inset-0 z-0">
                 <img
@@ -31,44 +31,43 @@ export default function Hero() {
                 className="absolute bottom-20 left-[5%] w-80 h-80 bg-blue-500/20 rounded-full blur-3xl z-0"
             />
 
-            <div className="container-custom relative z-10 py-20">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="container-custom relative z-10">
+                <div className="max-w-4xl mx-auto flex flex-col items-center">
 
-                    {/* Left Content */}
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
                         {/* Interactive Badge */}
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 
-                            rounded-full px-4 py-2 mb-6 shadow-lg cursor-default"
+                            rounded-full px-4 py-2 mb-8 shadow-lg cursor-default"
                         >
                             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                             <span className="text-blue-100 text-sm font-semibold tracking-wide uppercase">Available to Rent Now</span>
                         </motion.div>
 
-                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
+                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-8 tracking-tight">
                             Heavy Duty <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-400 animate-shine-text">
                                 Solutions
                             </span>
                         </h1>
 
-                        <p className="text-lg text-blue-100/90 leading-relaxed mb-8 max-w-lg border-l-4 border-amber-500 pl-6">
+                        <p className="text-lg sm:text-xl text-blue-100/90 leading-relaxed mb-10 max-w-2xl mx-auto">
                             Trucks, excavators, oil supply, and road construction services.
                             We customise and import machinery as per your requirement — delivered within 2 months.
                         </p>
 
-                        <div className="flex flex-wrap gap-4 mb-12">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                             <motion.a
                                 href="#equipment"
                                 whileHover={{ scale: 1.05, x: 5 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="bg-gradient-to-r from-amber-500 to-orange-600 text-white px-8 py-4 rounded-xl 
-                                font-bold text-lg shadow-lg shadow-amber-500/30 flex items-center gap-3 transition-all"
+                                font-bold text-lg shadow-lg shadow-amber-500/30 flex items-center justify-center gap-3 transition-all shadow-glow"
                             >
                                 View Fleet <FaArrowRight />
                             </motion.a>
@@ -79,81 +78,30 @@ export default function Hero() {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-xl 
-                                font-bold text-lg border border-white/20 hover:bg-white/20 transition-all flex items-center gap-3"
+                                font-bold text-lg border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center gap-3"
                             >
                                 <FaWhatsapp className="text-green-400 text-xl" /> WhatsApp
                             </motion.a>
                         </div>
 
                         {/* Stats Row */}
-                        <div className="flex gap-8 border-t border-white/10 pt-8">
+                        <div className="flex flex-wrap justify-center gap-8 sm:gap-16 border-t border-white/10 pt-10">
                             <div>
-                                <p className="text-3xl font-bold text-white">15+</p>
+                                <p className="text-4xl font-bold text-white">15+</p>
                                 <p className="text-sm text-blue-200 uppercase tracking-wider">Machines</p>
                             </div>
                             <div>
-                                <p className="text-3xl font-bold text-white">200+</p>
+                                <p className="text-4xl font-bold text-white">200+</p>
                                 <p className="text-sm text-blue-200 uppercase tracking-wider">Projects</p>
                             </div>
                             <div>
-                                <p className="text-3xl font-bold text-white">5+</p>
+                                <p className="text-4xl font-bold text-white">5+</p>
                                 <p className="text-sm text-blue-200 uppercase tracking-wider">Years</p>
                             </div>
                         </div>
                     </motion.div>
-
-                    {/* Right Content - 3D Floating Cards (Stacked on Tablet/Mobile, Floating on Desktop) */}
-                    <div className="relative lg:h-[600px] flex flex-col gap-6 mt-8 lg:mt-0">
-                        {/* Service Cards */}
-                        <FloatingCard
-                            icon={FaTruckMoving}
-                            title="Haulage Services"
-                            desc="32T & 42T Trucks"
-                            color="bg-blue-600"
-                            position="top-0 lg:top-10 lg:right-10"
-                            delay={0.2}
-                        />
-                        <FloatingCard
-                            icon={FaOilCan}
-                            title="Oil Supply"
-                            desc="Reliable Fuel Delivery"
-                            color="bg-black"
-                            position="left-0 lg:top-1/2 lg:-translate-y-1/2 lg:left-0"
-                            delay={0.4}
-                        />
-                        <FloatingCard
-                            icon={FaCogs}
-                            title="Custom Import"
-                            desc="Delivery in 2 Months"
-                            color="bg-amber-600"
-                            position="bottom-0 lg:bottom-10 lg:right-20"
-                            delay={0.6}
-                        />
-
-                        {/* Circle Background - Desktop Only */}
-                        <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-white/10 rounded-full animate-spin-slow-reverse" />
-                        <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border border-white/10 rounded-full animate-spin-slow" />
-                    </div>
                 </div>
             </div>
         </section>
-    );
-}
-
-function FloatingCard({ icon: Icon, title, desc, color, position, delay }) {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay, duration: 0.8, type: "spring" }}
-            whileHover={{ scale: 1.1, rotate: 2 }}
-            className={`relative lg:absolute ${position} bg-white/10 backdrop-blur-xl border border-white/20 p-5 rounded-2xl w-full sm:w-64 shadow-2xl cursor-default mx-auto lg:mx-0`}
-        >
-            <div className={`w-12 h-12 ${color} rounded-lg flex items-center justify-center text-white text-xl mb-3 shadow-lg`}>
-                <Icon />
-            </div>
-            <h3 className="text-white font-bold text-lg">{title}</h3>
-            <p className="text-blue-200 text-sm">{desc}</p>
-        </motion.div>
     );
 }
