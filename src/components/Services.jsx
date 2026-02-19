@@ -73,7 +73,7 @@ export default function Services() {
                                     boxShadow: "0 0 25px rgba(59, 130, 246, 0.4)"
                                 }}
                                 whileHover={{ y: -8, scale: 1.08 }} // Increased to be larger than the static 1.05
-                                className="group relative bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 overflow-hidden hover:border-amber-400/50 transition-all duration-300 hover:shadow-glow"
+                                className="group relative bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 overflow-hidden hover:border-amber-400/50 transition-all duration-300 hover:shadow-glow scroll-mt-28"
                                 id={service.title.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}
                             >
                                 {/* Hover Gradient Background */}
