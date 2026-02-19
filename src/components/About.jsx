@@ -182,6 +182,18 @@ export default function About() {
                     ))}
                 </div>
             </div>
-        </section>
+
+            {/* Moving Truck Separator */}
+            <div className="absolute bottom-0 left-0 w-full h-12 overflow-hidden bg-gradient-to-r from-transparent via-gray-900/5 to-transparent">
+                <div className="absolute bottom-0 w-full h-0.5 bg-gray-300/50" /> {/* Road Line */}
+                <motion.div
+                    animate={{ x: ["-10vw", "110vw"] }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    className="absolute bottom-0.5 left-0"
+                >
+                    <FaTruck className="text-3xl text-gray-400 opacity-80" />
+                </motion.div>
+            </div>
+        </section >
     );
 }

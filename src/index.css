@@ -10,6 +10,11 @@
     scroll-behavior: smooth;
   }
 
+  section {
+    scroll-margin-top: 100px;
+    /* Offset for sticky navbar */
+  }
+
   body {
     @apply font-sans text-gray-800 bg-white antialiased overflow-x-hidden;
     -webkit-tap-highlight-color: transparent;

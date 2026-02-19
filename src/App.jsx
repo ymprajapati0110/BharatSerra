@@ -51,7 +51,7 @@ function useScrollToCenter() {
         e.preventDefault();
         const element = document.querySelector(target.hash);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
           // Update URL without jumping
           window.history.pushState(null, '', target.hash);
         }

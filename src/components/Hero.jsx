@@ -8,7 +8,7 @@ import { FaWhatsapp, FaArrowRight } from "react-icons/fa";
 
 export default function Hero() {
     return (
-        <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 lg:pt-24 pb-20 overflow-hidden text-center">
+        <section id="home" className="relative min-h-screen flex items-start lg:items-center justify-center pt-24 lg:pt-24 pb-20 overflow-hidden text-center">
             {/* Background Image with Dynamic Overlay */}
             <div className="absolute inset-0 z-0">
                 <img
