@@ -24,13 +24,11 @@ export default function Services() {
         <section id="services" className="section-padding relative overflow-hidden bg-gradient-to-br from-gray-900 via-indigo-950 to-purple-950">
             {/* Dynamic Background */}
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
-            <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-                className="absolute -top-1/2 -left-1/2 w-[100vw] h-[100vw] bg-gradient-to-r from-blue-500/20 to-pink-500/20 rounded-full blur-3xl opacity-40"
-            />
+            {/* Dynamic Background - Optimized (Removed heavy rotation for performance) */}
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
+            <div className="absolute -top-1/2 -left-1/2 w-[100vw] h-[100vw] bg-gradient-to-r from-blue-500/10 to-pink-500/10 rounded-full blur-3xl opacity-30" />
 
-            <div className="container-custom relative z-10">
+            <div className="container-custom relative z-10 transition-all">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -68,12 +66,14 @@ export default function Services() {
                                 whileInView={{
                                     opacity: 1,
                                     y: 0,
-                                    scale: 1.05,
+                                    scale: 1, // Reset to 1 to avoid conflicts with target scale
                                     borderColor: "rgba(255, 255, 255, 0.5)",
                                     boxShadow: "0 0 25px rgba(59, 130, 246, 0.4)"
                                 }}
-                                whileHover={{ y: -8, scale: 1.08 }} // Increased to be larger than the static 1.05
-                                className="group relative bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 overflow-hidden hover:border-amber-400/50 transition-all duration-300 hover:shadow-glow scroll-mt-28"
+                                whileHover={{ y: -8, scale: 1.05, zIndex: 50 }} // zIndex ensures shadow is on top
+                                className="group relative bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 overflow-hidden 
+                                hover:border-amber-400/50 transition-all duration-300 hover:shadow-glow scroll-mt-28
+                                target:ring-2 target:ring-amber-400 target:scale-105 target:shadow-2xl target:bg-white/10 target:z-40"
                                 id={service.title.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}
                             >
                                 {/* Hover Gradient Background */}
