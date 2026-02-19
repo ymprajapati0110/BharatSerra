@@ -116,13 +116,13 @@ export default function About() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
                     >
-                        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                        <h3 className="text-2xl sm:text-3xl font-bold text-black mb-4" style={{ color: 'black' }}>
                             Building Sierra Leone's{" "}
                             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                                 Infrastructure
                             </span>
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-6">
+                        <p className="text-black leading-relaxed mb-6 font-medium" style={{ color: 'black' }}>
                             We specialize in providing heavy machinery for mining, road
                             construction, and building projects. Our fleet includes trucks
                             and excavators operated by experienced professionals.
