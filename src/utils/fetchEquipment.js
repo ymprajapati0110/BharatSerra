@@ -35,7 +35,8 @@ export async function fetchEquipment() {
     console.log("🌐 Fetching equipment data from Google Sheets...");
 
     try {
-        const response = await fetch(APPS_SCRIPT_URL);
+        // Use a unique timestamp to prevent browser caching
+        const response = await fetch(`${APPS_SCRIPT_URL}?t=${new Date().getTime()}`);
 
         if (!response.ok) {
             throw new Error(`Failed to fetch data: ${response.status}`);

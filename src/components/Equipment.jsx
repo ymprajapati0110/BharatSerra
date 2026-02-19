@@ -19,13 +19,13 @@ const DEFAULT_IMAGES = {
 // Helper to separate Google Drive links from direct URLs
 function getImage(item) {
     if (item.image) {
-        // Handle Google Drive links (convert 'view' to 'thumbnail' or direct link)
+        // Handle Google Drive links
         if (item.image.includes("drive.google.com") || item.image.includes("docs.google.com")) {
-            // Extract ID
-            const idMatch = item.image.match(/[-\w]{25,}/);
-            if (idMatch) {
-                // Use a high-quality thumbnail endpoint (lh3) or direct download
-                return `https://drive.google.com/thumbnail?id=${idMatch[0]}&sz=w1000`;
+            // Try identifying /d/ID or id=ID patterns
+            const idMatch = item.image.match(/\/d\/([-\w]{25,})/) || item.image.match(/id=([-\w]{25,})/);
+            if (idMatch && idMatch[1]) {
+                // Return high-res thumbnail link
+                return `https://drive.google.com/thumbnail?id=${idMatch[1]}&sz=w1000`;
             }
         }
         return item.image;
