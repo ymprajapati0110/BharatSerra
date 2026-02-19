@@ -11,33 +11,33 @@ const FEATURES = [
         icon: FaTruck,
         title: "Modern Fleet",
         description: "Well-maintained 32T & 42T trucks and crawler excavators ready for any project.",
-        gradient: "from-blue-500 to-cyan-500",
-        bgLight: "bg-blue-50",
-        iconColor: "text-blue-600",
+        gradient: "from-blue-400 to-cyan-400",
+        cardBg: "bg-blue-900",
+        iconColor: "text-blue-300",
     },
     {
         icon: FaShieldAlt,
         title: "Safety First",
         description: "All equipment meets international safety standards with regular maintenance.",
-        gradient: "from-emerald-500 to-teal-500",
-        bgLight: "bg-emerald-50",
-        iconColor: "text-emerald-600",
+        gradient: "from-emerald-400 to-teal-400",
+        cardBg: "bg-emerald-800",
+        iconColor: "text-emerald-300",
     },
     {
         icon: FaClock,
         title: "24/7 Availability",
         description: "Round-the-clock support and equipment availability for your deadlines.",
-        gradient: "from-amber-500 to-orange-500",
-        bgLight: "bg-amber-50",
-        iconColor: "text-amber-600",
+        gradient: "from-amber-400 to-orange-400",
+        cardBg: "bg-orange-800",
+        iconColor: "text-amber-300",
     },
     {
         icon: FaHandshake,
         title: "Flexible Rentals",
         description: "Daily, weekly, and monthly rental plans tailored to your requirements.",
-        gradient: "from-purple-500 to-pink-500",
-        bgLight: "bg-purple-50",
-        iconColor: "text-purple-600",
+        gradient: "from-pink-400 to-rose-400",
+        cardBg: "bg-rose-900",
+        iconColor: "text-pink-300",
     },
 ];
 
@@ -160,22 +160,22 @@ export default function About() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group relative bg-white rounded-2xl p-7 text-center
-                         shadow-sm hover:shadow-xl transition-all duration-500 cursor-default
-                         border border-gray-100 overflow-hidden"
+                            className={`group relative ${feature.cardBg} rounded-2xl p-7 text-center
+                         shadow-lg hover:shadow-2xl transition-all duration-500 cursor-default
+                         border border-white/10 overflow-hidden`}
                         >
-                            {/* Gradient bar at top */}
+                            {/* Gradient bar at top - Hover Effect Preserved */}
                             <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.gradient} 
-                              transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
+                              transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
 
-                            <div className={`w-16 h-16 ${feature.bgLight} rounded-2xl flex items-center justify-center 
-                              mx-auto mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                            <div className={`w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center 
+                              mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 border border-white/10`}>
                                 <feature.icon className={`text-2xl ${feature.iconColor}`} />
                             </div>
-                            <h3 className="text-lg font-bold text-gray-900 mb-3">
+                            <h3 className="text-lg font-bold text-white mb-3">
                                 {feature.title}
                             </h3>
-                            <p className="text-gray-500 text-sm leading-relaxed">
+                            <p className="text-gray-300 text-sm leading-relaxed">
                                 {feature.description}
                             </p>
                         </motion.div>
