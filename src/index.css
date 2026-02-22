@@ -1,5 +1,5 @@
 /*
-  📘 INDEX.CSS — Global Styles & Animations
+  📘 INDEX.CSS — Global Styles (Clean Corporate)
 */
 @tailwind base;
 @tailwind components;
@@ -11,15 +11,8 @@
     color-scheme: light;
   }
 
-  .force-text-black {
-    color: #000000 !important;
-    opacity: 1 !important;
-    -webkit-text-fill-color: #000000 !important;
-  }
-
   section {
-    scroll-margin-top: 100px;
-    /* Offset for sticky navbar */
+    scroll-margin-top: 80px;
   }
 
   body {
@@ -38,169 +31,11 @@
 }
 
 @layer utilities {
-
-  /* Vibrant Text Gradients */
-  .text-gradient {
-    background: linear-gradient(135deg, #2563eb, #9333ea, #db2777);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .text-gradient-gold {
-    background: linear-gradient(135deg, #f59e0b, #ea580c, #db2777);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-  }
-
-  /* Section Spacing - Reduced */
   .section-padding {
-    @apply py-10 px-4 sm:py-14 md:py-16 lg:py-20;
+    @apply py-12 px-4 sm:py-16 md:py-20;
   }
 
-  /* Container */
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-
-  /* Glassmorphism Cards */
-  .glass-card {
-    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-xl;
-  }
-
-  .glass-card-dark {
-    @apply bg-gray-900/60 backdrop-blur-lg border border-white/10 shadow-xl;
-  }
-
-  /* Custom Animations */
-  @keyframes float {
-
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  @keyframes shine {
-    100% {
-      left: 125%;
-    }
-  }
-
-  .animate-shine {
-    position: absolute;
-    top: 0;
-    left: -125%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
-    transform: skewX(-25deg);
-    animation: shine 2s infinite;
-  }
-
-  @keyframes pulse-slow {
-
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0.8;
-    }
-  }
-
-  .animate-pulse-slow {
-    animation: pulse-slow 4s ease-in-out infinite;
-  }
-
-  @keyframes spin-slow {
-    from {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
-
-  .animate-spin-slow {
-    animation: spin-slow 20s linear infinite;
-  }
-
-  @keyframes spin-slow-reverse {
-    from {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-
-    to {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-  }
-
-  .animate-spin-slow-reverse {
-    animation: spin-slow-reverse 25s linear infinite;
-  }
-
-  @keyframes move-bg {
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .animate-shine-text {
-    background-size: 200% auto;
-    animation: move-bg 5s linear infinite;
-  }
-
-  /* Masterpiece Effects */
-  .animate-shimmer {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .animate-shimmer::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
-    transform: skewX(-25deg);
-    animation: shine 4s infinite;
-  }
-
-  .shadow-glow {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-    transition: box-shadow 0.3s ease;
-  }
-
-  .shadow-glow:hover {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
-  }
-
-  /* Global Polish */
-  .masterpiece-card {
-    @apply backdrop-blur-xl bg-white/10 border border-white/20 shadow-xl relative overflow-hidden;
   }
 }
