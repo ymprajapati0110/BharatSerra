@@ -1,36 +1,27 @@
 /*
-  📘 APP.JSX — Main Application with Routing
-  Two pages: Landing (/) and Fleet (/fleet)
+  📘 APP.JSX — Multipage Website
+  Pages: Home(/), Services(/services), Equipment(/equipment), Contact(/contact)
 */
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import ServicesOverview from "./components/ServicesOverview";
-import Equipment from "./components/Equipment";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
-import FleetPage from "./components/FleetPage";
-import Preloader from "./components/Preloader";
 import { useState, useEffect } from "react";
 
-function LandingPage() {
-  return (
-    <main>
-      <Hero />
-      <ServicesOverview />
-      <Equipment />
-      <Contact />
-    </main>
-  );
-}
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
+import Preloader from "./components/Preloader";
+
+// Pages
+import HomePage from "./pages/HomePage";
+import ServicesPage from "./pages/ServicesPage";
+import EquipmentPage from "./pages/EquipmentPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 1800);
     return () => clearTimeout(timer);
   }, []);
 
@@ -41,8 +32,11 @@ function App() {
       <div className="min-h-screen bg-white">
         <Navbar />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/fleet" element={<FleetPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/equipment" element={<EquipmentPage />} />
+          <Route path="/equipment/:category" element={<EquipmentPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
         <WhatsAppButton />
