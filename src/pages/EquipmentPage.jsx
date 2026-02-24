@@ -4,7 +4,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { FaWhatsapp, FaArrowLeft, FaTruck, FaRoad, FaHardHat, FaOilCan, FaGlobeAsia, FaFilter } from "react-icons/fa";
+import { FaArrowLeft, FaTruck, FaRoad, FaHardHat, FaOilCan, FaGlobeAsia, FaFilter } from "react-icons/fa";
 import { fetchEquipment } from "../utils/fetchEquipment";
 
 const DEFAULT_IMAGES = {
@@ -199,14 +199,12 @@ export default function EquipmentPage() {
                                         ))}
                                     </div>
 
-                                    <a
-                                        href={`https://wa.me/919979977744?text=Hi%2C%20I%27m%20interested%20in%20renting%20${encodeURIComponent(item.name)}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="btn-whatsapp w-full py-2.5 text-sm flex items-center justify-center gap-2"
+                                    <Link
+                                        to="/contact"
+                                        className="btn-primary w-full py-2.5 text-sm flex items-center justify-center gap-2"
                                     >
-                                        <FaWhatsapp /> Book via WhatsApp
-                                    </a>
+                                        Enquire Now
+                                    </Link>
                                 </div>
                             </div>
                         ))}
@@ -235,14 +233,12 @@ export default function EquipmentPage() {
                                 BharatSerra Corp is headquartered in India with <strong className="text-white">100+ equipment</strong> serving
                                 mining and construction projects. We import and customize machinery — delivered within 2 months.
                             </p>
-                            <a
-                                href="https://wa.me/919979977744?text=Hi%2C%20I%27m%20interested%20in%20equipment%20from%20India"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <Link
+                                to="/contact"
                                 className="inline-flex items-center gap-2 bg-orange-400 hover:bg-orange-500 text-gray-900 font-semibold px-5 py-2.5 rounded-lg mt-4 transition-colors text-sm"
                             >
-                                <FaWhatsapp /> Enquire About India Fleet
-                            </a>
+                                Enquire About India Fleet
+                            </Link>
                         </div>
                     </div>
                 </div>

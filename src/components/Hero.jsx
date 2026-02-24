@@ -2,7 +2,7 @@
   📘 HERO + ABOUT + 9 SERVICE BOXES — Homepage
 */
 
-import { FaWhatsapp, FaTruck, FaHardHat, FaGlobeAsia, FaArrowRight, FaRoad, FaOilCan } from "react-icons/fa";
+import { FaTruck, FaHardHat, FaGlobeAsia, FaArrowRight, FaRoad, FaOilCan } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 /* 9 sub-service items */
@@ -22,7 +22,7 @@ export default function Hero() {
     return (
         <section>
             {/* ═══════ HERO BANNER ═══════ */}
-            <div className="relative min-h-[65vh] sm:min-h-[75vh] flex items-center">
+            <div className="relative min-h-[420px] sm:min-h-[500px] flex items-center" style={{ height: '65vh' }}>
                 <div className="absolute inset-0">
                     <img
                         src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80"
@@ -47,24 +47,11 @@ export default function Hero() {
                         </h1>
 
                         <p className="text-sm sm:text-base text-blue-100 leading-relaxed mb-6 max-w-lg">
-                            Heavy machinery for mining, road construction, and infrastructure
-                            — operated by experienced professionals.
+                            Your trusted partner for heavy equipment, mining operations,
+                            and large-scale construction across West Africa.
                         </p>
 
-                        {/* CTAs — stack on small mobile */}
-                        <div className="flex flex-col sm:flex-row gap-3">
-                            <Link to="/services" className="btn-white px-5 py-3 text-sm flex items-center justify-center gap-2 shadow-lg">
-                                Our Services <FaArrowRight className="text-xs" />
-                            </Link>
-                            <a
-                                href="https://wa.me/919979977744?text=Hi%2C%20I%27m%20interested%20in%20renting%20equipment"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-whatsapp px-5 py-3 text-sm flex items-center justify-center gap-2"
-                            >
-                                <FaWhatsapp className="text-lg" /> Get a Quote
-                            </a>
-                        </div>
+
                     </div>
                 </div>
 
@@ -86,24 +73,19 @@ export default function Hero() {
                                 About Us
                             </div>
                             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-                                About <span className="text-gradient-blue">BharatSerra Corp</span>
+                                <span className="text-gradient-blue">BharatSerra Corp</span>
                             </h2>
                             <p className="text-gray-600 leading-relaxed mb-3 text-sm sm:text-base">
-                                BharatSerra Corp specializes in heavy equipment rental, mining services,
-                                oil supply, and infrastructure development in Sierra Leone.
+                                We operate a fleet of <strong className="text-blue-700">100+ machines</strong> — tipper trucks,
+                                excavators, graders, and specialty mining rigs — all maintained to
+                                the highest safety and performance standards.
                             </p>
                             <p className="text-gray-600 leading-relaxed mb-5 text-sm sm:text-base">
-                                Headquartered in India with <strong className="text-blue-700">100+ equipment</strong>,
-                                we bring decades of experience to West Africa's construction sector.
+                                Our on-ground team in Freetown ensures rapid mobilization,
+                                round-the-clock support, and on-time project delivery across
+                                Sierra Leone and West Africa.
                             </p>
-                            <div className="flex flex-wrap gap-3">
-                                <Link to="/services" className="btn-primary px-5 py-2.5 text-sm flex items-center gap-2">
-                                    Our Services <FaArrowRight className="text-xs" />
-                                </Link>
-                                <Link to="/contact" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors">
-                                    Contact Us
-                                </Link>
-                            </div>
+
                         </div>
 
                         {/* Stats */}
@@ -122,6 +104,42 @@ export default function Hero() {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            {/* ═══════ MOVING TRUCK ═══════ */}
+            <div className="bg-white py-6 sm:py-8 overflow-hidden">
+                <div className="relative w-full h-12 sm:h-16">
+                    <div className="absolute" style={{ animation: 'truckDrive 8s linear infinite' }}>
+                        <svg viewBox="0 0 200 70" className="h-12 sm:h-16 w-auto" xmlns="http://www.w3.org/2000/svg">
+                            {/* Cargo body */}
+                            <rect x="10" y="10" width="110" height="35" rx="4" fill="#1e3a8a" />
+                            <rect x="10" y="10" width="110" height="8" rx="3" fill="#1e40af" />
+                            <text x="65" y="34" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold" fontFamily="sans-serif">BHARATSERRA</text>
+                            {/* Cabin — right side (facing right) */}
+                            <rect x="120" y="18" width="38" height="27" rx="4" fill="#2563eb" />
+                            <rect x="138" y="22" width="18" height="14" rx="2" fill="#93c5fd" opacity="0.7" />
+                            {/* Chassis */}
+                            <rect x="5" y="45" width="160" height="6" rx="2" fill="#1e3a8a" />
+                            {/* Wheels */}
+                            <circle cx="35" cy="55" r="9" fill="#1f2937" />
+                            <circle cx="35" cy="55" r="4" fill="#6b7280" />
+                            <circle cx="60" cy="55" r="9" fill="#1f2937" />
+                            <circle cx="60" cy="55" r="4" fill="#6b7280" />
+                            <circle cx="140" cy="55" r="9" fill="#1f2937" />
+                            <circle cx="140" cy="55" r="4" fill="#6b7280" />
+                            {/* Exhaust */}
+                            <rect x="155" y="6" width="3" height="14" rx="1" fill="#64748b" />
+                        </svg>
+                    </div>
+                    {/* Road line */}
+                    <div className="absolute bottom-1 left-0 w-full border-b-2 border-dashed border-gray-300" />
+                </div>
+                <style>{`
+                    @keyframes truckDrive {
+                        0%   { transform: translateX(-220px); }
+                        100% { transform: translateX(calc(100vw + 20px)); }
+                    }
+                `}</style>
             </div>
 
             {/* ═══════ 9 SERVICE BOXES ═══════ */}
@@ -157,31 +175,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* ═══════ 4 SERVICE CARDS — blue strip ═══════ */}
-            <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-12">
-                <div className="container-custom">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-                        {[
-                            { icon: FaTruck, title: "Equipment Rental", to: "/equipment/equipment-rental" },
-                            { icon: FaRoad, title: "Infrastructure", to: "/equipment/infrastructure" },
-                            { icon: FaHardHat, title: "Mining", to: "/equipment/mining" },
-                            { icon: FaOilCan, title: "Oil Supply", to: "/equipment/oil-supply" },
-                        ].map((item) => (
-                            <Link
-                                key={item.title}
-                                to={item.to}
-                                className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 text-center text-white hover:bg-white/20 transition-all group"
-                            >
-                                <item.icon className="text-2xl sm:text-3xl mx-auto mb-2 text-blue-300 group-hover:text-orange-400 transition-colors" />
-                                <p className="font-semibold text-xs sm:text-sm">{item.title}</p>
-                                <p className="text-blue-300 text-[10px] sm:text-xs mt-1 group-hover:text-white transition-colors">
-                                    View →
-                                </p>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </div>
+
         </section>
     );
 }

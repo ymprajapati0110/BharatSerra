@@ -5,7 +5,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaPhone, FaEnvelope } from "react-icons/fa";
 
 const NAV_LINKS = [
     { label: "Home", to: "/" },
@@ -98,15 +98,7 @@ export default function Navbar() {
                             </Link>
                         ))}
 
-                        <a
-                            href="https://wa.me/919979977744?text=Hi%2C%20I%27m%20interested%20in%20renting%20equipment"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="ml-3 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors shadow-sm"
-                        >
-                            <FaWhatsapp className="text-base" />
-                            WhatsApp
-                        </a>
+
                     </div>
 
                     {/* HAMBURGER */}
@@ -148,14 +140,7 @@ export default function Navbar() {
                                 <a href="tel:+919979977744" className="flex items-center gap-3 px-4 py-2 text-gray-600 text-sm">
                                     <FaPhone className="text-blue-500 text-xs" /> +91 99799 77744
                                 </a>
-                                <a
-                                    href="https://wa.me/919979977744"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-3 mx-4 py-3 bg-green-500 text-white rounded-lg justify-center font-semibold text-sm"
-                                >
-                                    <FaWhatsapp /> Chat on WhatsApp
-                                </a>
+
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@
 
 import { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { FaTruck, FaRoad, FaHardHat, FaOilCan, FaArrowRight, FaWhatsapp } from "react-icons/fa";
+import { FaTruck, FaRoad, FaHardHat, FaOilCan, FaArrowRight } from "react-icons/fa";
 
 const SERVICES = [
     {
@@ -103,14 +103,6 @@ export default function ServicesPage() {
                                     >
                                         View Equipment <FaArrowRight className="text-[10px]" />
                                     </button>
-                                    <a
-                                        href={`https://wa.me/919979977744?text=Hi%2C%20I%27m%20interested%20in%20${encodeURIComponent(service.title)}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="btn-whatsapp px-4 py-2 text-xs sm:text-sm flex items-center gap-2"
-                                    >
-                                        <FaWhatsapp /> Enquire
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -127,9 +119,6 @@ export default function ServicesPage() {
                     </p>
                     <div className="flex flex-wrap justify-center gap-3">
                         <Link to="/contact" className="btn-white px-6 py-2.5 text-sm">Contact Us</Link>
-                        <a href="https://wa.me/919979977744" target="_blank" rel="noopener noreferrer" className="btn-whatsapp px-6 py-2.5 text-sm flex items-center gap-2">
-                            <FaWhatsapp /> WhatsApp
-                        </a>
                     </div>
                 </div>
             </div>

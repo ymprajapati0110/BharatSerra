@@ -72,11 +72,11 @@ export default function ContactPage() {
             </div>
 
             <div className="container-custom py-10">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Left: Contact Info + Quick Links */}
-                    <div className="space-y-6">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                    {/* Left: Contact Info */}
+                    <div className="flex flex-col">
                         {/* Contact Cards */}
-                        <div>
+                        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex-1">
                             <h3 className="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wider">Contact Information</h3>
                             <div className="grid grid-cols-2 gap-3">
                                 {CONTACT_INFO.map((info) => {
@@ -102,18 +102,6 @@ export default function ContactPage() {
                         </div>
 
 
-
-                        {/* WhatsApp CTA */}
-                        <a
-                            href="https://wa.me/919979977744?text=Hi%2C%20I%20need%20information%20about%20your%20services"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block bg-green-500 hover:bg-green-600 text-white rounded-xl p-5 text-center font-semibold transition-colors"
-                        >
-                            <FaWhatsapp className="text-2xl mx-auto mb-2" />
-                            Chat on WhatsApp
-                            <p className="text-xs text-green-100 font-normal mt-1">Fastest way to reach us</p>
-                        </a>
                     </div>
 
                     {/* Right: Form */}

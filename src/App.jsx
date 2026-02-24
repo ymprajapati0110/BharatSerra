@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
+
 import Preloader from "./components/Preloader";
 
 // Pages
@@ -39,7 +39,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
-        <WhatsAppButton />
+
       </div>
     </Router>
   );
