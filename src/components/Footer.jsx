@@ -42,7 +42,7 @@ export default function Footer() {
                 </div>
 
                 {/* Links — single compact grid on mobile */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-2 mb-8">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-2">
                     {ALL_LINKS.map((link) => (
                         <Link
                             key={link.label}
@@ -54,8 +54,6 @@ export default function Footer() {
                     ))}
                 </div>
             </div>
-
-
             {/* Bottom bar */}
             <div className="border-t border-blue-800/50">
                 <div className="container-custom py-3 flex items-center justify-between">
