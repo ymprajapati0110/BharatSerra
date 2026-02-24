@@ -15,7 +15,7 @@ const SERVICE_BOXES = [
     { icon: "⛏️", title: "Site Clearing", desc: "Land preparation" },
     { icon: "🏔️", title: "Mining & Haulage", desc: "End-to-end mining" },
     { icon: "🛢️", title: "Oil & Lubricants", desc: "Industrial supply" },
-    { icon: "🔧", title: "Custom Import", desc: "From India in 2 mo" },
+    { icon: "🔧", title: "Custom Import", desc: "India, 2 months" },
 ];
 
 export default function Hero() {
@@ -53,11 +53,8 @@ export default function Hero() {
 
                         {/* CTAs — stack on small mobile */}
                         <div className="flex flex-col sm:flex-row gap-3">
-                            <Link to="/equipment" className="btn-white px-5 py-3 text-sm flex items-center justify-center gap-2 shadow-lg">
-                                View Our Fleet <FaArrowRight className="text-xs" />
-                            </Link>
-                            <Link to="/services" className="border-2 border-white/30 text-white px-5 py-3 rounded-lg font-semibold text-sm hover:bg-white/10 transition-all text-center">
-                                Our Services
+                            <Link to="/services" className="btn-white px-5 py-3 text-sm flex items-center justify-center gap-2 shadow-lg">
+                                Our Services <FaArrowRight className="text-xs" />
                             </Link>
                             <a
                                 href="https://wa.me/919979977744?text=Hi%2C%20I%27m%20interested%20in%20renting%20equipment"
