@@ -53,35 +53,8 @@ export default function Footer() {
                         </Link>
                     ))}
                 </div>
-
-                {/* Contact row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-                    <a href="tel:+23290800632" className="flex items-center gap-2.5 text-blue-200 hover:text-white transition-colors text-sm">
-                        <div className="w-7 h-7 bg-blue-800 rounded flex items-center justify-center flex-shrink-0">
-                            <FaPhone className="text-[10px] text-blue-400" />
-                        </div>
-                        +232 90 800632
-                    </a>
-                    <a href="tel:+919979977744" className="flex items-center gap-2.5 text-blue-200 hover:text-white transition-colors text-sm">
-                        <div className="w-7 h-7 bg-blue-800 rounded flex items-center justify-center flex-shrink-0">
-                            <FaPhone className="text-[10px] text-blue-400" />
-                        </div>
-                        +91 99799 77744
-                    </a>
-                    <a href="mailto:Bharatserracorp@gmail.com" className="flex items-center gap-2.5 text-blue-200 hover:text-white transition-colors text-sm min-w-0">
-                        <div className="w-7 h-7 bg-blue-800 rounded flex items-center justify-center flex-shrink-0">
-                            <FaEnvelope className="text-[10px] text-blue-400" />
-                        </div>
-                        <span className="truncate">Bharatserracorp@gmail.com</span>
-                    </a>
-                    <div className="flex items-center gap-2.5 text-blue-200 text-sm">
-                        <div className="w-7 h-7 bg-blue-800 rounded flex items-center justify-center flex-shrink-0">
-                            <FaMapMarkerAlt className="text-[10px] text-blue-400" />
-                        </div>
-                        Sierra Leone & India
-                    </div>
-                </div>
             </div>
+
 
             {/* Bottom bar */}
             <div className="border-t border-blue-800/50">
