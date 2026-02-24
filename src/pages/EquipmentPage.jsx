@@ -150,52 +150,52 @@ export default function EquipmentPage() {
 
                 {/* Equipment Grid */}
                 {!loading && filteredEquipment.length > 0 && (
-                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {filteredEquipment.map((item) => (
                             <div key={item.id} className="card overflow-hidden group">
                                 {/* Image */}
-                                <div className="relative h-28 sm:h-40 bg-gray-50 overflow-hidden">
+                                <div className="relative h-40 sm:h-44 bg-gray-50 overflow-hidden">
                                     <img
                                         src={getImage(item)}
                                         alt={item.name}
                                         onError={(e) => { e.target.onerror = null; e.target.src = DEFAULT_IMAGES.default; }}
-                                        className="w-full h-full object-contain p-1 group-hover:scale-105 transition-transform duration-500"
+                                        className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                                     />
-                                    <span className="absolute top-1 left-1 bg-blue-600 text-white text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded">
+                                    <span className="absolute top-2 left-2 bg-blue-600 text-white text-[11px] font-bold px-2.5 py-1 rounded">
                                         {item.category}
                                     </span>
                                     {item.available && item.available.toLowerCase() === "yes" && (
-                                        <span className="absolute top-1 right-1 bg-green-500 text-white text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded">
+                                        <span className="absolute top-2 right-2 bg-green-500 text-white text-[11px] font-bold px-2.5 py-1 rounded">
                                             Available
                                         </span>
                                     )}
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-2.5 sm:p-4">
-                                    <h3 className="font-bold text-gray-900 text-xs sm:text-base mb-0.5 sm:mb-1 line-clamp-1">{item.name}</h3>
+                                <div className="p-4">
+                                    <h3 className="font-bold text-gray-900 text-sm sm:text-base mb-1">{item.name}</h3>
                                     {item.description && (
-                                        <p className="text-[10px] sm:text-sm text-gray-500 mb-2 line-clamp-1 sm:line-clamp-2">{item.description}</p>
+                                        <p className="text-xs sm:text-sm text-gray-500 mb-2 line-clamp-2">{item.description}</p>
                                     )}
 
                                     {(item.capacity || item.specs) && (
-                                        <div className="flex flex-wrap gap-1 mb-2">
-                                            {item.capacity && <span className="text-[9px] sm:text-[11px] bg-blue-50 text-blue-700 px-1.5 py-0.5 rounded font-semibold">{item.capacity}</span>}
-                                            {item.specs && <span className="text-[9px] sm:text-[11px] bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded font-semibold">{item.specs}</span>}
+                                        <div className="flex flex-wrap gap-1.5 mb-2">
+                                            {item.capacity && <span className="text-[11px] bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">{item.capacity}</span>}
+                                            {item.specs && <span className="text-[11px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded font-semibold">{item.specs}</span>}
                                         </div>
                                     )}
 
                                     {/* Pricing — only show if at least one price exists */}
                                     {(item.priceDaily || item.priceWeekly || item.priceMonthly) && (
-                                        <div className="grid grid-cols-3 gap-1 mb-2">
+                                        <div className="grid grid-cols-3 gap-1.5 mb-3">
                                             {[
                                                 { label: "Daily", value: item.priceDaily },
                                                 { label: "Weekly", value: item.priceWeekly },
                                                 { label: "Monthly", value: item.priceMonthly },
                                             ].map((p) => (
-                                                <div key={p.label} className="bg-blue-50 rounded p-1 sm:p-2 text-center">
-                                                    <p className="text-[8px] sm:text-[10px] text-blue-400 font-bold uppercase">{p.label}</p>
-                                                    <p className="text-[10px] sm:text-sm font-bold text-blue-900">{p.value ? `$${p.value}` : "—"}</p>
+                                                <div key={p.label} className="bg-blue-50 rounded p-1.5 text-center">
+                                                    <p className="text-[10px] text-blue-400 font-bold uppercase">{p.label}</p>
+                                                    <p className="text-xs sm:text-sm font-bold text-blue-900">{p.value ? `$${p.value}` : "—"}</p>
                                                 </div>
                                             ))}
                                         </div>
@@ -203,7 +203,7 @@ export default function EquipmentPage() {
 
                                     <Link
                                         to="/contact"
-                                        className="btn-primary w-full py-1.5 sm:py-2.5 text-xs sm:text-sm flex items-center justify-center gap-2"
+                                        className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg text-sm transition-colors"
                                     >
                                         Enquire Now
                                     </Link>
