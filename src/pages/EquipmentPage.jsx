@@ -202,7 +202,7 @@ export default function EquipmentPage() {
                                     )}
 
                                     <Link
-                                        to="/contact"
+                                        to={`/contact?equipment=${encodeURIComponent(item.name)}`}
                                         className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg text-sm transition-colors"
                                     >
                                         Enquire Now

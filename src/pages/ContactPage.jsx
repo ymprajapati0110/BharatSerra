@@ -3,6 +3,7 @@
 */
 
 import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import {
     FaPhone,
@@ -37,8 +38,29 @@ const SERVICES_LIST = [
 export default function ContactPage() {
     const [form, setForm] = useState({ name: "", email: "", phone: "", equipment: "", message: "" });
     const [submitted, setSubmitted] = useState(false);
+    const [searchParams] = useSearchParams();
 
-    useEffect(() => { window.scrollTo(0, 0); }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        const equipmentName = searchParams.get("equipment");
+        if (equipmentName) {
+            setForm((prev) => ({
+                ...prev,
+                message: `Hi, I'm interested in: ${equipmentName}. Please share availability and pricing details.`,
+                equipment: matchService(equipmentName),
+            }));
+        }
+    }, [searchParams]);
+
+    /* Try to match equipment name to a service category */
+    function matchService(name) {
+        const lower = name.toLowerCase();
+        if (["truck", "tipper", "excavator", "vehicle"].some((k) => lower.includes(k))) return "Equipment Rental";
+        if (["road", "bridge", "culvert", "canal"].some((k) => lower.includes(k))) return "Infrastructure Development";
+        if (["mining", "earth", "site", "haulage"].some((k) => lower.includes(k))) return "Mining & Earthworks";
+        if (["oil", "lubricant", "hydraulic", "gear"].some((k) => lower.includes(k))) return "Oil Supply";
+        return "";
+    }
 
     const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
