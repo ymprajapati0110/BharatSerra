@@ -94,7 +94,7 @@ export default function ContactPage() {
                                                 <info.icon className="text-white text-xs" />
                                             </div>
                                             <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">{info.label}</p>
-                                            <p className="font-semibold text-gray-800 text-xs break-all">{info.value}</p>
+                                            <p className="font-semibold text-gray-800 text-[11px] truncate">{info.value}</p>
                                         </Card>
                                     );
                                 })}
