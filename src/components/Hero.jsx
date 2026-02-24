@@ -76,7 +76,7 @@ export default function Hero() {
                                 <span className="text-gradient-blue">BharatSerra Corp</span>
                             </h2>
                             <p className="text-gray-600 leading-relaxed mb-3 text-sm sm:text-base">
-                                We operate a fleet of <strong className="text-blue-700">100+ machines</strong> — tipper trucks,
+                                We operate a growing fleet of tipper trucks,
                                 excavators, graders, and specialty mining rigs — all maintained to
                                 the highest safety and performance standards.
                             </p>
