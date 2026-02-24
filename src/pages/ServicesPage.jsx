@@ -13,8 +13,8 @@ const SERVICES = [
         slug: "equipment-rental",
         description: "Reliable heavy machinery available for short and long-term rental across Sierra Leone. All equipment is maintained to the highest standards.",
         items: ["Tipper Trucks (32T & 42T)", "Excavators", "Lightweight Vehicles"],
-        /* Dump truck on a construction site */
-        image: "https://images.unsplash.com/photo-1580901368919-7738efb0f228?w=600&q=80",
+        /* Row of heavy trucks / fleet ready for rent */
+        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80",
     },
     {
         icon: FaRoad,
@@ -22,8 +22,8 @@ const SERVICES = [
         slug: "infrastructure",
         description: "Complete infrastructure solutions — roads, bridges, canals, and culverts that form the backbone of Sierra Leone's development.",
         items: ["Roads", "Canals", "Concrete Culverts", "Pipe Culverts", "Bridges"],
-        /* Road construction / highway being built */
-        image: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=600&q=80",
+        /* Bridge and road under construction */
+        image: "https://images.unsplash.com/photo-1545459720-aac8509eb02c?w=600&q=80",
     },
     {
         icon: FaHardHat,
@@ -31,8 +31,8 @@ const SERVICES = [
         slug: "mining",
         description: "End-to-end mining support for Sierra Leone's growing mineral sector. From site preparation to haulage.",
         items: ["Site Clearing", "Site Preparation", "Earth Work", "Mining & Haulage"],
-        /* Open-pit mine / excavation */
-        image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=600&q=80",
+        /* Excavator in a mining pit */
+        image: "https://images.unsplash.com/photo-1578319439584-104c94d37305?w=600&q=80",
     },
     {
         icon: FaOilCan,
@@ -40,8 +40,8 @@ const SERVICES = [
         slug: "oil-supply",
         description: "Keep your machinery running with our industrial grade oils and lubricants. We source and deliver for all equipment types.",
         items: ["Engine Oil", "Gear Oil", "Hydraulic Oil"],
-        /* Oil barrels / industrial oil */
-        image: "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=600&q=80",
+        /* Industrial oil drums and lubricant barrels */
+        image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=80",
     },
 ];
 
