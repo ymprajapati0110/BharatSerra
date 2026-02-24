@@ -13,8 +13,7 @@ const SERVICES = [
         slug: "equipment-rental",
         description: "Reliable heavy machinery available for short and long-term rental across Sierra Leone. All equipment is maintained to the highest standards.",
         items: ["Tipper Trucks (32T & 42T)", "Excavators", "Lightweight Vehicles"],
-        /* Row of heavy trucks / fleet ready for rent */
-        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80",
+        image: "/images/equipment-rental.png",
     },
     {
         icon: FaRoad,
@@ -22,8 +21,7 @@ const SERVICES = [
         slug: "infrastructure",
         description: "Complete infrastructure solutions — roads, bridges, canals, and culverts that form the backbone of Sierra Leone's development.",
         items: ["Roads", "Canals", "Concrete Culverts", "Pipe Culverts", "Bridges"],
-        /* Bridge and road under construction */
-        image: "https://images.unsplash.com/photo-1545459720-aac8509eb02c?w=600&q=80",
+        image: "/images/infrastructure.png",
     },
     {
         icon: FaHardHat,
@@ -31,8 +29,7 @@ const SERVICES = [
         slug: "mining",
         description: "End-to-end mining support for Sierra Leone's growing mineral sector. From site preparation to haulage.",
         items: ["Site Clearing", "Site Preparation", "Earth Work", "Mining & Haulage"],
-        /* Excavator in a mining pit */
-        image: "https://images.unsplash.com/photo-1578319439584-104c94d37305?w=600&q=80",
+        image: "/images/mining.png",
     },
     {
         icon: FaOilCan,
@@ -40,8 +37,7 @@ const SERVICES = [
         slug: "oil-supply",
         description: "Keep your machinery running with our industrial grade oils and lubricants. We source and deliver for all equipment types.",
         items: ["Engine Oil", "Gear Oil", "Hydraulic Oil"],
-        /* Industrial oil drums and lubricant barrels */
-        image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=80",
+        image: "/images/oil-supply.png",
     },
 ];
 
