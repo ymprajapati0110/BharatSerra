@@ -2,7 +2,7 @@
   📘 CONTACT PAGE — Blue theme with quick links, contact cards, and form
 */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import {
@@ -39,6 +39,7 @@ export default function ContactPage() {
     const [form, setForm] = useState({ name: "", email: "", phone: "", equipment: "", message: "" });
     const [submitted, setSubmitted] = useState(false);
     const [searchParams] = useSearchParams();
+    const formRef = useRef(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -49,6 +50,10 @@ export default function ContactPage() {
                 message: `Hi, I'm interested in: ${equipmentName}. Please share availability and pricing details.`,
                 equipment: matchService(equipmentName),
             }));
+            // Scroll to the form after a brief delay
+            setTimeout(() => {
+                formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 300);
         }
     }, [searchParams]);
 
@@ -129,6 +134,7 @@ export default function ContactPage() {
                     {/* Right: Form */}
                     <div className="lg:col-span-2">
                         <form
+                            ref={formRef}
                             onSubmit={handleSubmit}
                             className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-gray-100"
                         >

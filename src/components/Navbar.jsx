@@ -36,28 +36,6 @@ export default function Navbar() {
 
     return (
         <>
-            {/* TOP INFO BAR — dark blue */}
-            <div className="hidden md:block bg-gradient-to-r from-blue-950 to-blue-900 text-white text-[13px]">
-                <div className="container-custom flex justify-between items-center py-2">
-                    <div className="flex items-center gap-6">
-                        <a href="tel:+23290800632" className="flex items-center gap-2 hover:text-blue-200 transition-colors">
-                            <FaPhone className="text-[10px] text-blue-400" />
-                            +232 90 800632
-                        </a>
-                        <span className="w-px h-3 bg-blue-700" />
-                        <a href="tel:+919979977744" className="flex items-center gap-2 hover:text-blue-200 transition-colors">
-                            <FaPhone className="text-[10px] text-blue-400" />
-                            +91 99799 77744
-                        </a>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        <a href="mailto:Bharatserracorp@gmail.com" className="flex items-center gap-2 hover:text-blue-200 transition-colors">
-                            <FaEnvelope className="text-[10px] text-blue-400" />
-                            Bharatserracorp@gmail.com
-                        </a>
-                    </div>
-                </div>
-            </div>
 
             {/* MAIN NAVBAR */}
             <nav className={`sticky top-0 z-50 bg-white transition-all duration-300 ${scrolled ? "shadow-lg py-1" : "shadow py-2.5"}`}>
